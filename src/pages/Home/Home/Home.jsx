@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Button, Card, ListGroup } from 'react-bootstrap';
 import { AiFillLike } from "react-icons/ai";
 import Popular from '../Popular';
+import ShareRecipies from '../../ShareRecipes/ShareRecipies';
+import { key } from 'localforage';
 
 
 const Home = () => {
@@ -13,7 +15,7 @@ const Home = () => {
         fetch('http://localhost:5000/chefData')
             .then(res => res.json())
             .then(data => setChefData(data))
-            .catch(error => console.error(error))
+            
 
     }, [])
     console.log(chefData)
@@ -38,8 +40,9 @@ const Home = () => {
                 <h2 className='text-center mt-5'>Chef Detail</h2>
                 {
                     <div className="row mb-5">
-                        {chefData[0]?.services?.map((service) => (
+                        {chefData[0]?.services?.map(service =>(
                             <div className='col-12 col-md-6 col-lg-4 g-4'>
+                              
                                 <Card >
                                     <Card.Img variant="top" src={service?.chef_picture} />
                                     <Card.Body>
@@ -65,7 +68,7 @@ const Home = () => {
                                                 <p className=' ms-2'>{service?.likes}</p>
                                             </div>
 
-                                            <Link to={`/chefdetails/${service?.id}`}><Button className='btn btn-danger' variant="primary">View Recipes</Button></Link>
+                                            <Link to={`/chefdetails/${service?._id}`}><Button className='btn btn-danger' variant="primary">View Recipes</Button></Link>
                                         </div>
                                     </Card.Body>
                                 </Card>
@@ -76,6 +79,7 @@ const Home = () => {
                 }
 
             </div>
+            <ShareRecipies></ShareRecipies>
             <Popular></Popular>
         </div>
     );

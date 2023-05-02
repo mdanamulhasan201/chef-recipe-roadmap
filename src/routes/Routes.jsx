@@ -4,7 +4,8 @@ import Home from "../pages/Home/Home/Home";
 import ChefDetails from "../layout/ChefDetails";
 import Chef from "../pages/Chef/Chef/Chef";
 import Login from "../pages/Login/Login";
-import Register from "../../../../../Live-session-3(login page auth server)Gias vai/login-page-auth-with-server/src/pages/Register/Register";
+import Register from "../pages/Register/Register";
+
 
 const router = createBrowserRouter([
     {
@@ -34,11 +35,7 @@ const router = createBrowserRouter([
                 element: <Chef></Chef>,
                 // loader: ({params}) => fetch(`http://localhost:5000/chefData/${params.id}`)
             },
-            {
-                path: ':id',
-                element: <Chef></Chef>,
-                // loader: ({params}) => fetch(`http://localhost:5000/chefData/${params.id}`)
-            }
+            
         ]
     }
 ])

@@ -9,16 +9,16 @@ import ShareRecipies from '../../ShareRecipes/ShareRecipies';
 
 
 const Home = () => {
-    const [chefData, setChefData] = useState([])
+    const [chefdata, setChefData] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:5000/chefData')
             .then(res => res.json())
             .then(data => setChefData(data))
-            
+
 
     }, [])
-    console.log(chefData)
+    console.log(chefdata)
     return (
 
         <div>
@@ -40,9 +40,9 @@ const Home = () => {
                 <h2 className='text-center mt-5'>Chef Detail</h2>
                 {
                     <div className="row mb-5">
-                        {chefData[0]?.services?.map(service =>(
+                        {chefdata[0]?.services?.map((service) => (
                             <div className='col-12 col-md-6 col-lg-4 g-4'>
-                              
+
                                 <Card >
                                     <Card.Img variant="top" src={service?.chef_picture} />
                                     <Card.Body>
@@ -68,7 +68,9 @@ const Home = () => {
                                                 <p className=' ms-2'>{service?.likes}</p>
                                             </div>
 
-                                            <Link to={`/chefdetails/${service?._id}`}><Button className='btn btn-danger' variant="primary">View Recipes</Button></Link>
+                                            <Link to={`/chefdetails/${service?.id}`}><Button className='btn btn-danger' variant="primary">View Recipes</Button></Link>
+
+                                            
                                         </div>
                                     </Card.Body>
                                 </Card>

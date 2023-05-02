@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css'
 import { Link } from 'react-router-dom';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, ListGroup } from 'react-bootstrap';
 import { AiFillLike } from "react-icons/ai";
+import Popular from '../Popular';
 
 
 const Home = () => {
@@ -39,15 +40,24 @@ const Home = () => {
                     <div className="row mb-5">
                         {chefData[0]?.services?.map((service) => (
                             <div className='col-12 col-md-6 col-lg-4 g-4'>
-                                <Card>
+                                <Card >
                                     <Card.Img variant="top" src={service?.chef_picture} />
                                     <Card.Body>
                                         <Card.Title className='fw-bold fs-3 text-danger'>{service?.chef_name}</Card.Title>
 
-                                        <div className=''>
-                                            <p> Years of experience :{service?.years_of_experience}</p>
-                                            <p>Numbers of recipes :{service?.number_of_recipes}</p>
-                                        </div>
+                                    </Card.Body>
+
+                                    <ListGroup className="list-group-flush">
+
+                                        <ListGroup.Item><p> Years of experience :{service?.years_of_experience}</p></ListGroup.Item>
+                                        <ListGroup.Item><p>Numbers of recipes :{service?.number_of_recipes}</p></ListGroup.Item>
+
+                                    </ListGroup>
+
+
+
+
+                                    <Card.Body>
                                         <div className='d-flex justify-content-between'>
                                             <div className='d-flex'>
 
@@ -55,16 +65,18 @@ const Home = () => {
                                                 <p className=' ms-2'>{service?.likes}</p>
                                             </div>
 
-                                            <Button variant="primary">View Recipes</Button>
+                                            <Link to={`/chefdetails/${service?.id}`}><Button className='btn btn-danger' variant="primary">View Recipes</Button></Link>
                                         </div>
                                     </Card.Body>
                                 </Card>
+
                             </div>
                         ))}
                     </div>
                 }
 
             </div>
+            <Popular></Popular>
         </div>
     );
 };

@@ -12,7 +12,7 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto fs-6 fw-bold">
-                        <Link to="/" className='me-2 text-decoration-none text-secondary'>Home</Link>
+                        <NavLink to="/" className='me-2 text-decoration-none text-secondary'>Home</NavLink>
                         <Link to="/blog" className='me-2 text-decoration-none text-secondary'>Blog</Link>
                         <Link to="/blog" className='me-2 text-decoration-none text-secondary'>Contact</Link>
 
@@ -21,9 +21,9 @@ const Header = () => {
 
                     <Nav>
                         <Nav.Link href="#deets">Profile</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            <Button variant="danger">Login</Button>
-                        </Nav.Link>
+                       
+                     <Link to='/login'> <Button variant="danger">Login</Button></Link>
+                      
                     </Nav>
                 </Navbar.Collapse>
             </Container>

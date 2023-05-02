@@ -1,12 +1,9 @@
 import React from 'react';
 
-
 const Chef = () => {
- 
-  
     return (
         <div>
-        <h3>This chef</h3>
+            <h2>This is </h2>
         </div>
     );
 };

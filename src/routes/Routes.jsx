@@ -2,9 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
 import ChefDetails from "../layout/ChefDetails";
-import Chef from "../pages/Chef/Chef/Chef";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Chef from "../pages/Chef/Chef/Chef";
+import PrivateRoute from "./PrivateRoute";
+
 
 
 const router = createBrowserRouter([
@@ -22,20 +24,20 @@ const router = createBrowserRouter([
             },
             {
                 path : 'register',
-                element : <Register></Register>
+                element :<Register></Register>
             }
         ]
     },
+
     {
-        path: 'chefdetails',
+        path: "chefDetails",
         element: <ChefDetails></ChefDetails>,
-        children : [
+        children: [
+         
             {
-                path: '/chefdetails',
-                element: <Chef></Chef>,
-                // loader: ({params}) => fetch(`http://localhost:5000/chefData/${params.id}`)
-            },
-            
+                path: ':id',
+                element:  <PrivateRoute><Chef></Chef></PrivateRoute>
+            }
         ]
     }
 ])

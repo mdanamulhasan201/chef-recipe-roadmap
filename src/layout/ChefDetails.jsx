@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../pages/Shared/Header/Header';
-import Chef from '../pages/Chef/Chef/Chef';
+import { Outlet } from 'react-router-dom';
 
 const ChefDetails = () => {
     return (
         <div>
             
             <Header></Header>
-            <Chef></Chef>
+           <Outlet></Outlet>
         </div>
     );
 };

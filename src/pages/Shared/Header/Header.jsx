@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
-import { FaRegUserCircle } from "react-icons/fa";
+import logo from '../../../assets/logo.png';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -16,7 +16,10 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='relative'>
             <Container>
-                <Navbar.Brand><Link className='text-decoration-none text-danger fw-bold fs-2'>Recipe Roadmap</Link></Navbar.Brand>
+                <Navbar.Brand className='logo d-flex align-items-center'>
+                    <img style={{width: "60px", height: "60px"}} src={logo} alt="" />
+                    <Link className='text-decoration-none  text-black fw-bold fs-3'>Recipe <span className='text-danger'>Roadmap</span>
+                </Link></Navbar.Brand>
 
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -31,8 +34,10 @@ const Header = () => {
 
                     <Nav>
                         {user &&
+                            <div className='d-flex align-items-center'>
+                                <img className='rounded-circle  me-2' data-toggle="tooltip" data-placement="left" title={user?.displayName} style={{ width: '40px' }} src={user?.photoURL} alt="" />
 
-                            <img className='rounded-circle w-25 me-2' src={user?.photoURL} alt="" />
+                            </div>
 
                         }
 

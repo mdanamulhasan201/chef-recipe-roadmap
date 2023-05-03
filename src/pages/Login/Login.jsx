@@ -62,7 +62,7 @@ const Login = () => {
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location ', location)
+    // console.log('login page location ', location)
     const from = location.state?.from?.pathname || '/'
 
 
@@ -71,12 +71,12 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value
         const password = form.password.value
-        console.log(email, password)
+        // console.log(email, password)
 
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
+                // console.log(loggedUser)
                 navigate(from, { replace: true })
                 
             })
@@ -100,11 +100,11 @@ const Login = () => {
 
                         <div className='col-lg-7 px-5 pt-2'>
                             <div className='logo text-center'>
-                                <img src={logo} className='h-' alt="" />
+                                <img src={logo} alt="" />
                                 <p className='fw-bold'>Recipe <span className='text-danger'>Roadmap</span></p>
                             </div>
                             <img src="" alt="" />
-                            <h4>Sign into your account</h4>
+                            <h4 className='fw-bold'>Login your account</h4>
                             <Form onSubmit={handleLogin}>
                                 <div className='form-row'>
                                     <div className='col-lg-7'>

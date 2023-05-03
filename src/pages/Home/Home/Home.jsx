@@ -19,15 +19,39 @@ const Home = () => {
 
     }, [])
     console.log(chefdata)
+
+
     return (
 
         <div>
-            <div className='bgImage'></div>
+            {/* <div className='bgImage'></div>
             <div className='content'>
                 <h2 className='text-white fw-bold fs-1'>The Best <span className='text-danger fs-1'>Food</span></h2>
                 <h2 className='fw-bold fs-4 text-white'>no matter how you cook, Recipe Roadmap has many the recipes.</h2>
                 <p className='text-white'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab accusantium quos, blanditiis sed sequi officiis delectus! Labore officiis, </p>
                 <Link to="/contact" className='btn btn-danger'>Send Message</Link>
+            </div> */}
+
+            <div className='header'>
+                <div className='container'>
+                    <div className='banner-text'>
+                        <div className='text-area'>
+                            <span>K</span>
+                            <span>I</span>
+                            <span>T</span>
+                            <span>C</span>&nbsp;
+                            <span>H</span>
+                            <span>E</span>
+                            <span>N</span>
+                    
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptates consequatur <br></br> laudantium repellat commodi, ea earum illo rerum ipsam repellendus?</p>
+
+                        <Button className='banner-btn btn btn-danger '>
+                            <Link to='/' className='text-decoration-none text-white fw-bold'>Subscribe</Link>
+                        </Button>
+                    </div>
+                </div>
             </div>
 
 

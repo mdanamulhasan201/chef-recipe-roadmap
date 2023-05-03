@@ -8,7 +8,7 @@ const Chef = () => {
    
     const { id } = useParams()
     const [chefData, setChefData] = useState({})
-    console.log(id)
+    // console.log(id)
     useEffect(() => {
         fetch(`http://localhost:5000/chefData/${id}`)
             .then(res => res.json())

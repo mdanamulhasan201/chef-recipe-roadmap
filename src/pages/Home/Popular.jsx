@@ -4,7 +4,7 @@ import { Badge, Card, CardGroup } from 'react-bootstrap';
 const Popular = () => {
     return (
         <div className='container'>
-            <h2 className='text-center mb-5 pt-5'>Popular Recipes</h2>
+            <h2 className='text-center mb-5 pt-5'>Popular <span className='text-danger'>Recipes</span></h2>
             <CardGroup className='gap-4 mb-5'>
                 <Card>
                     <Card.Img variant="top" src="https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />

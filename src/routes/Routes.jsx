@@ -6,6 +6,8 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Chef from "../pages/Chef/Chef/Chef";
 import PrivateRoute from "./PrivateRoute";
+import Blog from "../pages/Blog/Blog";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 
@@ -13,10 +15,15 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: 'blog',
+                element: <Blog></Blog>
             },
             {
                 path: 'login',

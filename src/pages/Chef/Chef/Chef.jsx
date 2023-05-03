@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card, ListGroup } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import { AiFillLike } from "react-icons/ai";
+import Recipes from '../../Recipes/Recipes';
 
 
 const Chef = () => {
-   
+
     const { id } = useParams()
     const [chefData, setChefData] = useState({})
     // console.log(id)
@@ -15,7 +16,7 @@ const Chef = () => {
             .then(data => setChefData(data.item))
     }, [])
 
-    // console.log(chefData.recipes[0])
+    // console.log(chefData.recipes)
     return (
         <div className='container px-5'>
             <h2 className='text-center mt-5 mb-3 fw-bold underline'>Chef <span className='text-danger'> Details </span></h2>
@@ -46,11 +47,12 @@ const Chef = () => {
 
                     </div>
                 </Card.Body>
+
+             
+
             </Card>
 
-
-
-
+            <Recipes></Recipes>
         </div>
     );
 };

@@ -8,11 +8,13 @@ import './Login.css'
 import { ImGoogle2 } from "react-icons/im";
 import { GoMarkGithub } from "react-icons/go";
 import logo from '../../assets/logo.png';
+// import { toast } from "react-hot-toast";
 
 
 
 const Login = () => {
 
+    const { user, updateProfileData, profileUpdate } = useContext(AuthContext);
 
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
@@ -34,7 +36,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 navigate(from, { replace: true })
-                setSuccess('User has been successfully login')
+                // toast.success("Logout Successfully!");
             })
             .catch(error => {
                 setError(error.message)
@@ -91,9 +93,9 @@ const Login = () => {
         <Container>
 
 
-            <div className='form my-4 mx-5 mt-5'>
+            <div className='form my-4 mx-5 mb-5 pb-5 mt-5'>
                 <div className='container'>
-                    <div className='row bg-light no-gutters'>
+                    <div className='row bg bg-light no-gutters'>
                         <div className='col-lg-5'>
                             <img src="https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className='img-fluid ' alt="" />
                         </div>

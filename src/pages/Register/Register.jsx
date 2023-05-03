@@ -9,8 +9,11 @@ import app from '../../firebase/firebase.config';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 
 
+
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+    const [accepted, setAccepted] = useState(false);
+
 
 
     const [error, setError] = useState('')
@@ -29,11 +32,13 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 setSuccess('User has been successfully login')
+
             })
             .catch(error => {
                 setError(error.message)
             })
     }
+
 
 
     // git hub login
@@ -44,7 +49,7 @@ const Register = () => {
         signInWithPopup(auth, gitHubProvider)
             .then(result => {
                 const loggedInUser = result.user;
-                setSuccess('User has been successfully login', loggedInUser)
+                setSuccess('User has been successfully login')
 
             })
             .catch(error => {
@@ -84,6 +89,30 @@ const Register = () => {
             })
 
 
+        // update profile
+        userUpdate(name, photo)
+            .then(() => {
+                updateAuthData(name, photo);
+                // Navigate to our destination
+                navigate(from, { replace: true });
+                setLoading(false);
+                setIsNotChecked(true);
+                event.target.reset();
+            })
+            .catch((error) => {
+                // Navigate to our destination
+                navigate(from, { replace: true });
+                setLoading(false);
+                setIsNotChecked(true);
+                event.target.reset();
+                console.log(error);
+            });
+
+
+    }
+
+    const handleAccepted = event => {
+        setAccepted(event.target.checked)
     }
     // console.log(test())
     return (
@@ -122,13 +151,18 @@ const Register = () => {
                                             <input type="password" name='password' className='form-control my-3 p-2' placeholder='******' required />
                                         </div>
                                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                            <Form.Check type="checkbox" name='accept' label="Accept Terms and Condition" />
+                                            <Form.Check
+                                                onClick={handleAccepted}
+                                                type="checkbox"
+                                                name='accept'
+                                                label={<>Accept <Link to='/'>Terms and Condition</Link></>} />
                                         </Form.Group>
                                     </div>
 
                                     <div className='form-row'>
                                         <div className='col-lg-7'>
-                                            <button type='submit' className='btn1 border-0 mt-2 mb-2'>Register</button>
+                                            <button type='submit'
+                                                disabled={!accepted} className='btn btn-danger btn1 border-0 mt-2 mb-2'>Register</button>
                                             <p className='text-danger'>{error}</p>
                                             <p className='text-success'>{success}</p>
                                         </div>

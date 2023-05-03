@@ -17,20 +17,19 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='relative'>
             <Container>
                 <Navbar.Brand className='logo d-flex align-items-center'>
-                    <img style={{width: "60px", height: "60px"}} src={logo} alt="" />
+                    <img style={{ width: "60px", height: "60px" }} src={logo} alt="" />
                     <Link className='text-decoration-none  text-black fw-bold fs-3'>Recipe <span className='text-danger'>Roadmap</span>
-                </Link></Navbar.Brand>
+                    </Link></Navbar.Brand>
 
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto fs-6 fw-bold">
-                        <Link to="/" className='me-2 text-decoration-none text-secondary'>Home</Link>
-                        <Link to="/blog" className='me-2 text-decoration-none text-secondary'>Blog</Link>
-                        <Link to="/blog" className='me-2 text-decoration-none text-secondary'>Contact</Link>
-
-
+                        <NavLink to="/" className='me-2 text-decoration-none text-secondary' activeClassName="selected">Home</NavLink>
+                        <NavLink to="/blog" className='me-2 text-decoration-none text-secondary' activeClassName="selected">Blog</NavLink>
+                        <NavLink to="/contact" className='me-2 text-decoration-none text-secondary' activeClassName="selected">Contact</NavLink>
                     </Nav>
+
 
                     <Nav>
                         {user &&

@@ -5,6 +5,7 @@ import { AiFillLike } from "react-icons/ai";
 
 
 const Chef = () => {
+   
     const { id } = useParams()
     const [chefData, setChefData] = useState({})
     console.log(id)
@@ -14,6 +15,7 @@ const Chef = () => {
             .then(data => setChefData(data.item))
     }, [])
 
+    // console.log(chefData.recipes[0])
     return (
         <div className='container px-5'>
             <h2 className='text-center mt-5 mb-3 fw-bold underline'>Chef <span className='text-danger'> Details </span></h2>
@@ -46,16 +48,6 @@ const Chef = () => {
                 </Card.Body>
             </Card>
 
-
-
-            {/* recipes */}
-
-{/* 
-            {
-                chefData[0].map(recipe=>{
-                    console.log(recipe)
-                })
-            } */}
 
 
 

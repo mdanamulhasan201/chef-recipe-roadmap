@@ -70,7 +70,7 @@ const Home = () => {
 
                                             <Link to={`/chefdetails/${service?.id}`}><Button className='btn btn-danger' variant="primary">View Recipes</Button></Link>
 
-                                            
+
                                         </div>
                                     </Card.Body>
                                 </Card>

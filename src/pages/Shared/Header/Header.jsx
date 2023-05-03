@@ -32,8 +32,7 @@ const Header = () => {
                     <Nav>
                         {user &&
 
-                            <FaRegUserCircle className='fs-3'>
-                            </FaRegUserCircle>
+                            <img className='rounded-circle w-25 me-2' src={user?.photoURL} alt="" />
 
                         }
 

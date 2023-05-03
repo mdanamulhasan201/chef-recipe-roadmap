@@ -6,7 +6,7 @@ import { ImGoogle2 } from "react-icons/im";
 import { GoMarkGithub } from "react-icons/go";
 import logo from '../../assets/logo.png';
 import app from '../../firebase/firebase.config';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 
 
 const Register = () => {
@@ -17,15 +17,14 @@ const Register = () => {
     const [success, setSuccess] = useState('')
 
 
-
+    // sign in with google 
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () => {
-
         setSuccess('')
         setError('')
-
         signInWithPopup(auth, provider)
             .then(result => {
                 const user = result.user;
@@ -35,6 +34,24 @@ const Register = () => {
                 setError(error.message)
             })
     }
+
+
+    // git hub login
+
+    const handleGithubSignIn = () => {
+        setSuccess('')
+        setError('')
+        signInWithPopup(auth, gitHubProvider)
+            .then(result => {
+                const loggedInUser = result.user;
+                setSuccess('User has been successfully login', loggedInUser)
+
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+    }
+
 
 
 
@@ -72,58 +89,6 @@ const Register = () => {
     return (
         <div>
             <Container>
-                {/* <h3 className='text-center mt-5 mb-3'>Create a new account</h3>
-                <Form className='mx-auto w-50 bg-light p-4 rounded' onSubmit={handleRegister}>
-
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" name='name' placeholder="Enter name" required />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Photo URl</Form.Label>
-                        <Form.Control type="text" name='photo' placeholder="Enter URL" required />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" name='email' placeholder="Enter email" required />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name='password' placeholder="Enter password" required />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" name='accept' label="Accept Terms and Condition" />
-                    </Form.Group>
-
-
-
-                    <Button variant="primary" type="submit">
-                        Register
-                    </Button>
-
-                    <div>
-                        <Form.Text className="text-secondary">
-                            Already Have an account?  <Link to="/login">Login</Link>
-                        </Form.Text>
-                    </div>
-
-
-                    <Form.Text className="text-danger">
-
-                    </Form.Text>
-
-                    <Form.Text className="text-success">
-
-                    </Form.Text>
-                    <p className='text-danger'>{error}</p>
-                    <p className='text-success'>{success}</p>
-                </Form> */}
-
-
                 <div className='form my-4 mx-5 mt-5'>
                     <div className='container'>
                         <div className='row bg-light no-gutters'>
@@ -157,8 +122,8 @@ const Register = () => {
                                             <input type="password" name='password' className='form-control my-3 p-2' placeholder='******' required />
                                         </div>
                                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" name='accept' label="Accept Terms and Condition" />
-                    </Form.Group>
+                                            <Form.Check type="checkbox" name='accept' label="Accept Terms and Condition" />
+                                        </Form.Group>
                                     </div>
 
                                     <div className='form-row'>
@@ -169,7 +134,7 @@ const Register = () => {
                                         </div>
                                         <div >
                                             <Button onClick={handleGoogleSignIn} type='button' className='me-5 border-0 bg-black'><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button>
-                                            <Button className='me-5 border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with Google</Button>
+                                            <Button onClick={handleGithubSignIn} className='me-5 border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with GitHub</Button>
 
                                         </div>
                                         <hr />

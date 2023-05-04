@@ -4,6 +4,8 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
 import logo from '../../../assets/logo.png';
+import './Header.css'
+import ActiveLink from '../../ActiveLink/ActiveLink';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -11,6 +13,9 @@ const Header = () => {
         logOut()
             .then()
             .catch(error => console.log(error))
+    }
+    const snavLinkStyle = ({ isActive }) => {
+
     }
 
     return (
@@ -24,10 +29,12 @@ const Header = () => {
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mx-auto fs-6 fw-bold">
-                        <NavLink to="/" className='me-2 text-decoration-none text-secondary'>Home</NavLink>
-                        <NavLink to="/blog" className='me-2 text-decoration-none text-secondary' >Blog</NavLink>
-                        <NavLink to="/contact" className='me-2 text-decoration-none text-secondary'>Contact</NavLink>
+
+                    <Nav className="mx-auto  fw-bold">
+
+                        <ActiveLink to="/">Home</ActiveLink>
+                        <ActiveLink to="/blog" >Blog</ActiveLink>
+                        <ActiveLink to="/contact" >Contact</ActiveLink>
                     </Nav>
 
 
@@ -41,14 +48,18 @@ const Header = () => {
                         }
 
 
-                      
-                       {
-                        user ?
-                            <Button onClick={handleLogOut} variant="danger">Logout</Button> :
-                            <Link to='/login'> <Button variant="danger">Login</Button></Link>
+
+                        {
+                            user ?
+                                <Button onClick={handleLogOut} variant="danger">Logout</Button> :
+                                <div>
+                                    <Link to='/login'> <Button variant="danger">Login</Button></Link>
+                                    <Link to='/register'> <Button  variant="outline-danger">Register</Button></Link>
+
+                                </div>
                         }
 
-                    
+
                         {/* <Link className='ms-1' to='/register'><Button variant="outline-danger">Register</Button></Link> */}
 
 

@@ -16,7 +16,7 @@ const Chef = () => {
     const [chefData, setChefData] = useState({})
     // console.log(id)
     useEffect(() => {
-        fetch(`http://localhost:5000/chefData/${id}`)
+        fetch(`https://chef-recipe-hunting-server-mdanamulhasan201.vercel.app/chefData/${id}`)
             .then(res => res.json())
             .then(data => setChefData(data.item))
     }, [])
@@ -73,7 +73,7 @@ const Chef = () => {
                             <div className='col-12 col-md-6 col-lg-4 g-4' key={recipe.id}>
 
                                 <Card style={{ height: "650px" }}>
-                                    <Card.Img variant="top" style={{height: "200px"}} src={recipe?.recipe_img} />
+                                    <Card.Img variant="top" style={{ height: "200px" }} src={recipe?.recipe_img} />
                                     <Card.Body>
                                         <Card.Title className='fw-bold fs-3 text-danger'>{recipe?.recipe_name}</Card.Title>
 
@@ -81,7 +81,18 @@ const Chef = () => {
 
                                     <ListGroup className="list-group-flush">
 
-                                        <ListGroup.Item><p> <span className='fw-bold'>Ingredients:</span> {recipe?.Ingredients}</p></ListGroup.Item>
+                                        <ListGroup.Item>
+
+                                            <p> <span className='fw-bold'>Ingredients:</span> {recipe?.Ingredients}
+                                            </p>
+
+                                            {/* <ol>
+                                                <li>
+                                                {recipe?.Ingredients}
+                                                </li>
+                                            </ol> */}
+                                            
+                                            </ListGroup.Item>
                                         <ListGroup.Item>
                                             <p> <span className='fw-bold'>Cooking Method:</span> {recipe?.cooking_method.length < 250 ? <>{recipe?.cooking_method}</> : <>{recipe?.cooking_method.slice(0, 200)}...<Link><p>Read more</p></Link> </>}</p>
                                         </ListGroup.Item>

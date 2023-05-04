@@ -47,7 +47,7 @@ const Register = () => {
         signInWithPopup(auth, gitHubProvider)
             .then(result => {
                 const loggedInUser = result.user;
-                setSuccess('User has been successfully login')
+                setSuccess('User has been successfully login',loggedInUser)
 
             })
             .catch(error => {
@@ -65,7 +65,7 @@ const Register = () => {
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
-        // const photo = form.photo.value;
+        const photo = form.photo.value;
         const password = form.password.value;
         const confirm = form.confirm.value;
 
@@ -97,6 +97,7 @@ const Register = () => {
         // update profile
         userUpdate(name, photo)
             .then(() => {
+                // userUpdate(email,name,photo)
                 updateAuthData(email, name, photo);
                 // Navigate to our destination
                 navigate(from, { replace: true });

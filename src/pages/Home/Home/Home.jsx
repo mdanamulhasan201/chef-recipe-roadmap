@@ -32,8 +32,10 @@ const Home = () => {
                             <span>I</span>
                             <span>T</span>
                             <span>C</span>
-                            <span>H</span>
+                            <span>H</span>&nbsp;
                             <span>E</span>
+                            <span>N</span>
+                            <span>N</span>
                             <span>N</span>
 
                         </div>
@@ -60,7 +62,7 @@ const Home = () => {
                             
                             <div className='col-12 col-md-6 col-lg-4 g-4' key={service.id}>
 
-                                <Card >
+                                <Card className='styles'>
                                     <Card.Img variant="top" src={service?.chef_picture} />
                                     <Card.Body>
                                         <Card.Title className='fw-bold fs-3 text-danger'>{service?.chef_name}</Card.Title>

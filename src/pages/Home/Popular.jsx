@@ -5,8 +5,8 @@ const Popular = () => {
     return (
         <div className='container'>
             <h2 className='text-center fw-bold mb-5 pt-5'>Popular <span className='text-danger'>Recipes</span></h2>
-            <CardGroup className='gap-4 mb-5'>
-                <Card>
+            <CardGroup className='gap-4 mb-5 '>
+                <Card className='styles'>
                     <Card.Img variant="top" src="https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <Card.Body>
                         <div className='d-flex justify-content-between'>
@@ -25,7 +25,7 @@ const Popular = () => {
                 </Card>
 
 
-                <Card>
+                <Card className='styles'>
                     <Card.Img variant="top" src="https://images.pexels.com/photos/2015191/pexels-photo-2015191.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <Card.Body>
                         <h6 className='text-danger tw-bold'>MAIN DISHES</h6>
@@ -41,7 +41,7 @@ const Popular = () => {
                 </Card>
 
 
-                <Card>
+                <Card className='styles'>
                     <Card.Img variant="top" src="https://images.pexels.com/photos/6210933/pexels-photo-6210933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <Card.Body>
                     <div className='d-flex justify-content-between'>

@@ -80,3 +80,10 @@
     font-size: 50px;
  }
 }
+
+.styles:hover{
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    transition: all ease-in-out .4s;
+    
+}

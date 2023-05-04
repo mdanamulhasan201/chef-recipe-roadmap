@@ -72,7 +72,7 @@ const Chef = () => {
 
                             <div className='col-12 col-md-6 col-lg-4 g-4' key={recipe.id}>
 
-                                <Card style={{ height: "650px" }}>
+                                <Card style={{ height: "650px" }} className='styles'>
                                     <Card.Img variant="top" style={{ height: "200px" }} src={recipe?.recipe_img} />
                                     <Card.Body>
                                         <Card.Title className='fw-bold fs-3 text-danger'>{recipe?.recipe_name}</Card.Title>

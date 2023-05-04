@@ -53,7 +53,7 @@ const Home = () => {
 
 
             <div className='container'>
-                <h2 className='text-center mt-5 mb-4'>Chef <span className='text-danger'>Detail</span></h2>
+                <h2 className='text-center mt-5 fw-bold mb-4'>Chef <span className='text-danger'>Detail</span></h2>
                 {
                     <div className="row mb-5">
                         {chefdata.map(service => (

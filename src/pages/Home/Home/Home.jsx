@@ -9,6 +9,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 
 
+
 const Home = () => {
     const [chefdata, setChefData] = useState([])
 
@@ -40,7 +41,7 @@ const Home = () => {
                             <span>N</span>
 
                         </div>
-                        <p className='fs-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptates consequatur <br></br> laudantium repellat commodi, ea earum illo rerum ipsam repellendus?</p>
+                        <p className='fs-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptates consequatur <br></br> laudantium repellat commodi, ea earum illo rerum ipsam repellendus?<br></br> amet consectetur adipisicing elit</p>
 
                         <Button className='banner-btn btn btn-danger ' style={{width: "200px", height: "50px"}}>
                             <Link to='/' className='text-decoration-none text-white fw-bold '>Subscribe <FaArrowRight></FaArrowRight> </Link>

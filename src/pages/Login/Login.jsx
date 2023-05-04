@@ -126,14 +126,6 @@ const Login = () => {
                                         <p className='text-success'>{success}</p>
                                     </div>
 
-                                    {/* <div className='row'>
-                                        <div className='col-12 col-md-6 col-lg-6 g-4'>
-                                            <Button onClick={handleGoogleSignIn} type='button' className='me-5 border-0 bg-black '><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button>
-
-                                            <Button onClick={handleGithubSignIn} className='me-5  border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with GitHub</Button>
-                                        </div>
-
-                                    </div> */}
                                     <Card.Body>
                                         <Card.Link ><Button onClick={handleGoogleSignIn} type='button' className='m-2 border-0 bg-black '><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button></Card.Link>
                                         <Card.Link > <Button onClick={handleGithubSignIn} className=' m-2 border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with GitHub</Button></Card.Link>

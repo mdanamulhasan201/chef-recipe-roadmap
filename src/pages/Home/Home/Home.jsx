@@ -39,7 +39,7 @@ const Home = () => {
                         </div>
                         <p className='fs-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptates consequatur <br></br> laudantium repellat commodi, ea earum illo rerum ipsam repellendus?</p>
 
-                        <Button className='banner-btn btn btn-danger'>
+                        <Button className='banner-btn btn btn-danger ' style={{width: "200px", height: "50px"}}>
                             <Link to='/' className='text-decoration-none text-white fw-bold '>Subscribe</Link>
                         </Button>
                     </div>

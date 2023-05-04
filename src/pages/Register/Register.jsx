@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Button, Container, Form } from 'react-bootstrap';
+import { Button, Card, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { ImGoogle2 } from "react-icons/im";
@@ -69,11 +69,18 @@ const Register = () => {
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
+        const confirm = form.confirm.value;
 
-        if (!/(?=.{6,})/.test(password)) {
-            setError('Please At least 6 char')
+        if (password !== confirm) {
+            setError('Your password did not match')
             return
         }
+        else if (password.length < 6) {
+            setError('Please At least 6 characters')
+            return
+        }
+
+
 
         // console.log(name, email, photo, password)
         createUser(email, password)
@@ -148,7 +155,10 @@ const Register = () => {
 
 
                                         <div className='col-lg-7'>
-                                            <input type="password" name='password' className='form-control my-3 p-2' placeholder='******' required />
+                                            <input type="password" name='password' className='form-control my-3 p-2' placeholder='Password' required />
+                                        </div>
+                                        <div className='col-lg-7'>
+                                            <input type="password" name='confirm' className='form-control my-3 p-2' placeholder='Confirm password' required />
                                         </div>
                                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                             <Form.Check
@@ -167,8 +177,10 @@ const Register = () => {
                                             <p className='text-success'>{success}</p>
                                         </div>
                                         <div >
-                                            <Button onClick={handleGoogleSignIn} type='button' className='me-5 border-0 bg-black'><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button>
-                                            <Button onClick={handleGithubSignIn} className='me-5 border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with GitHub</Button>
+                                            <Card.Body>
+                                                <Card.Link ><Button onClick={handleGoogleSignIn} type='button' className='m-2 border-0 bg-black '><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button></Card.Link>
+                                                <Card.Link > <Button onClick={handleGithubSignIn} className=' m-2 border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with GitHub</Button></Card.Link>
+                                            </Card.Body>
 
                                         </div>
                                         <hr />

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Button, Container, Form } from 'react-bootstrap';
+import { Button, Card, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
@@ -119,19 +119,25 @@ const Login = () => {
 
                                 <div className='form-row'>
                                     <div className='col-lg-7'>
-                                        <button  type='submit' className='btn1 border-0 mt-3 mb-4'>Login</button>
-                                       
+                                        <button type='submit' className='btn1 border-0 mt-3 mb-4'>Login</button>
+
 
                                         <p className='text-danger'>{error}</p>
                                         <p className='text-success'>{success}</p>
                                     </div>
 
-                                    <div >
-                                        <Button onClick={handleGoogleSignIn} type='button' className='me-5 border-0 bg-black '><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button>
+                                    {/* <div className='row'>
+                                        <div className='col-12 col-md-6 col-lg-6 g-4'>
+                                            <Button onClick={handleGoogleSignIn} type='button' className='me-5 border-0 bg-black '><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button>
 
-                                        <Button onClick={handleGithubSignIn} className='me-5  border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with GitHub</Button>
+                                            <Button onClick={handleGithubSignIn} className='me-5  border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with GitHub</Button>
+                                        </div>
 
-                                    </div>
+                                    </div> */}
+                                    <Card.Body>
+                                        <Card.Link ><Button onClick={handleGoogleSignIn} type='button' className='m-2 border-0 bg-black '><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button></Card.Link>
+                                        <Card.Link > <Button onClick={handleGithubSignIn} className=' m-2 border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with GitHub</Button></Card.Link>
+                                    </Card.Body>
 
                                     <hr />
                                 </div>

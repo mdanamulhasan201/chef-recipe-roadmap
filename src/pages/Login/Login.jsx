@@ -8,13 +8,14 @@ import './Login.css'
 import { ImGoogle2 } from "react-icons/im";
 import { GoMarkGithub } from "react-icons/go";
 import logo from '../../assets/logo.png';
-// import { toast } from "react-hot-toast";
+
 
 
 
 const Login = () => {
 
-    const { user, updateProfileData, profileUpdate } = useContext(AuthContext);
+
+    // const { user, updateProfileData, profileUpdate } = useContext(AuthContext);
 
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
@@ -46,17 +47,17 @@ const Login = () => {
 
     // git hub login
 
-    const handleGithubSignIn = () =>{
+    const handleGithubSignIn = () => {
         signInWithPopup(auth, gitHubProvider)
-        .then(result =>{
-            const loggedInUser = result.user;
-            navigate(from, { replace: true })
-            setSuccess('User has been successfully login',loggedInUser )
-          
-        })
-        .catch(error =>{
-            setError(error.message)
-        })
+            .then(result => {
+                const loggedInUser = result.user;
+                navigate(from, { replace: true })
+                setSuccess('User has been successfully login', loggedInUser)
+
+            })
+            .catch(error => {
+                setError(error.message)
+            })
     }
 
 
@@ -78,9 +79,8 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user
-                // console.log(loggedUser)
                 navigate(from, { replace: true })
-                
+
             })
             .catch(error => {
                 setError(error.message)
@@ -119,14 +119,16 @@ const Login = () => {
 
                                 <div className='form-row'>
                                     <div className='col-lg-7'>
-                                        <button type='submit' className='btn1 border-0 mt-3 mb-4'>Login</button>
+                                        <button  type='submit' className='btn1 border-0 mt-3 mb-4'>Login</button>
+                                       
+
                                         <p className='text-danger'>{error}</p>
                                         <p className='text-success'>{success}</p>
                                     </div>
 
                                     <div >
                                         <Button onClick={handleGoogleSignIn} type='button' className='me-5 border-0 bg-black '><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button>
-                                       
+
                                         <Button onClick={handleGithubSignIn} className='me-5  border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with GitHub</Button>
 
                                     </div>

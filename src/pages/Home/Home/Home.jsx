@@ -16,9 +16,9 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setChefData(data))
 
-
+           
     }, [])
-    console.log(chefdata)
+   
 
 
     return (
@@ -56,8 +56,9 @@ const Home = () => {
                 <h2 className='text-center mt-5 mb-4'>Chef <span className='text-danger'>Detail</span></h2>
                 {
                     <div className="row mb-5">
-                        {chefdata[0]?.services?.map((service) => (
-                            <div className='col-12 col-md-6 col-lg-4 g-4'>
+                        {chefdata.map(service => (
+                            
+                            <div className='col-12 col-md-6 col-lg-4 g-4' key={service.id}>
 
                                 <Card >
                                     <Card.Img variant="top" src={service?.chef_picture} />
@@ -73,7 +74,7 @@ const Home = () => {
 
                                     </ListGroup>
 
-
+                                       
 
 
                                     <Card.Body>
@@ -95,6 +96,8 @@ const Home = () => {
                         ))}
                     </div>
                 }
+
+               
 
             </div>
             <ShareRecipies></ShareRecipies>

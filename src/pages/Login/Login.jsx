@@ -125,7 +125,8 @@ const Login = () => {
                                     </div>
 
                                     <div >
-                                        <Button onClick={handleGoogleSignIn} type='button' className='me-5 border-0 bg-black'><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button>
+                                        <Button onClick={handleGoogleSignIn} type='button' className='me-5 border-0 bg-black '><ImGoogle2 className='fs-3 text-white'></ImGoogle2>Login with Google</Button>
+                                       
                                         <Button onClick={handleGithubSignIn} className='me-5  border-0 bg-black'><GoMarkGithub className='fs-3 text-white'></GoMarkGithub>Login with GitHub</Button>
 
                                     </div>

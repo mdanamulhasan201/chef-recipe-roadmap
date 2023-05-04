@@ -11,6 +11,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -47,9 +48,10 @@ const router = createBrowserRouter([
                     <PrivateRoute>
                         <Chef></Chef>
                     </PrivateRoute>
-                    // loader: ({params}) => fetch (`http://localhost:5000/chefData/${params.id}`)
-                    
-            }
+
+
+            },
+          
         ]
     }
 ])

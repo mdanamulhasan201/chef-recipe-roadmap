@@ -8,15 +8,15 @@ import './Header.css'
 import ActiveLink from '../../ActiveLink/ActiveLink';
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user,  logOut } = useContext(AuthContext);
+   
+
     const handleLogOut = () => {
         logOut()
             .then()
             .catch(error => console.log(error))
     }
-    const snavLinkStyle = ({ isActive }) => {
 
-    }
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='relative'>
@@ -35,6 +35,7 @@ const Header = () => {
                         <ActiveLink to="/">Home</ActiveLink>
                         <ActiveLink to="/blog" >Blog</ActiveLink>
                         <ActiveLink to="/contact" >Contact</ActiveLink>
+                  
                     </Nav>
 
 

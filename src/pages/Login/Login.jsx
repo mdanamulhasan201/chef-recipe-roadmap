@@ -15,7 +15,6 @@ import logo from '../../assets/logo.png';
 const Login = () => {
 
 
-    // const { user, updateProfileData, profileUpdate } = useContext(AuthContext);
 
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')

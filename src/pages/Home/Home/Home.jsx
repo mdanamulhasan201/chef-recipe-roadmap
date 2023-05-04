@@ -31,7 +31,7 @@ const Home = () => {
                             <span>K</span>
                             <span>I</span>
                             <span>T</span>
-                            <span>C</span>&nbsp;
+                            <span>C</span>
                             <span>H</span>
                             <span>E</span>
                             <span>N</span>

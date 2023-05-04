@@ -8,10 +8,8 @@ import logo from '../../assets/logo.png';
 import app from '../../firebase/firebase.config';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 
-
-
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, userUpdate, updateAuthData } = useContext(AuthContext);
     const [accepted, setAccepted] = useState(false);
 
 
@@ -67,7 +65,7 @@ const Register = () => {
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
-        const photo = form.photo.value;
+        // const photo = form.photo.value;
         const password = form.password.value;
         const confirm = form.confirm.value;
 
@@ -85,9 +83,9 @@ const Register = () => {
         // console.log(name, email, photo, password)
         createUser(email, password)
             .then(result => {
-                const createdUser = result.user;
+                const user = result.user;
                 event.target.reset('');
-                setSuccess('User has been create successfully')
+                setSuccess('User has been create successfully', user)
 
             })
             .catch(error => {
@@ -99,25 +97,22 @@ const Register = () => {
         // update profile
         userUpdate(name, photo)
             .then(() => {
-                updateAuthData(name, photo);
+                updateAuthData(email, name, photo);
                 // Navigate to our destination
                 navigate(from, { replace: true });
-                setLoading(false);
-                setIsNotChecked(true);
                 event.target.reset();
+
             })
             .catch((error) => {
                 // Navigate to our destination
                 navigate(from, { replace: true });
-                setLoading(false);
-                setIsNotChecked(true);
                 event.target.reset();
-                console.log(error);
+                setError(error);
             });
 
 
     }
-
+    // check box
     const handleAccepted = event => {
         setAccepted(event.target.checked)
     }

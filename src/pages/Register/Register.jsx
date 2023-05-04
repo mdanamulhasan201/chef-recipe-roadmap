@@ -47,7 +47,7 @@ const Register = () => {
         signInWithPopup(auth, gitHubProvider)
             .then(result => {
                 const loggedInUser = result.user;
-                setSuccess('User has been successfully login',loggedInUser)
+                setSuccess('User has been successfully login', loggedInUser)
 
             })
             .catch(error => {

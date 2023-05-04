@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Link } from 'react-router-dom';
+import { FaArrowRight } from "react-icons/fa";
 
 const ShareRecipies = () => {
     return (
@@ -10,7 +11,7 @@ const ShareRecipies = () => {
                         <div className='text-start '>
                             <p className='text-danger fw-bold mt-5'>JOIN US</p>
                             <h2 className='fs-1 fw-bold'>Let's start sharing <br></br> your awesome <br></br> recipes</h2>
-                            <button className='btn btn-danger mt-3'>Join Now</button>
+                            <button className='btn btn-danger mt-3'>Join Now <FaArrowRight></FaArrowRight></button>
                         </div>
 
                     </div>

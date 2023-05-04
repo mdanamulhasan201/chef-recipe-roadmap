@@ -5,6 +5,7 @@ import { Button, Card, ListGroup } from 'react-bootstrap';
 import { AiFillLike } from "react-icons/ai";
 import Popular from '../Popular';
 import ShareRecipies from '../../ShareRecipes/ShareRecipies';
+import { FaArrowRight } from "react-icons/fa";
 
 
 
@@ -42,7 +43,7 @@ const Home = () => {
                         <p className='fs-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptates consequatur <br></br> laudantium repellat commodi, ea earum illo rerum ipsam repellendus?</p>
 
                         <Button className='banner-btn btn btn-danger ' style={{width: "200px", height: "50px"}}>
-                            <Link to='/' className='text-decoration-none text-white fw-bold '>Subscribe</Link>
+                            <Link to='/' className='text-decoration-none text-white fw-bold '>Subscribe <FaArrowRight></FaArrowRight> </Link>
                         </Button>
                     </div>
                 </div>
@@ -87,7 +88,7 @@ const Home = () => {
                                                 <p className=' ms-2'>{service?.likes}</p>
                                             </div>
 
-                                            <Link to={`/chefdetails/${service?.id}`}><Button className='btn btn-danger' variant="primary">View Recipes</Button></Link>
+                                            <Link to={`/chefdetails/${service?.id}`}><Button className='btn btn-danger' variant="primary">View Recipes <FaArrowRight></FaArrowRight> </Button></Link>
 
 
                                         </div>

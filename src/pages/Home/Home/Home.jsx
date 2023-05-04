@@ -33,17 +33,15 @@ const Home = () => {
                             <span>K</span>
                             <span>I</span>
                             <span>T</span>
-                            <span>C</span>
-                            <span>H</span>&nbsp;
+                            <span>C</span>&nbsp;
+                            <span>H</span>
                             <span>E</span>
                             <span>N</span>
-                            <span>N</span>
-                            <span>N</span>
-
                         </div>
-                        <p className='fs-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptates consequatur <br></br> laudantium repellat commodi, ea earum illo rerum ipsam repellendus?<br></br> amet consectetur adipisicing elit</p>
+                        <h4 className='fw-bold text-white mb-4 fs-3'>Begin Smart Chef Every Day</h4>
+                        <p className='fs-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptates consequatur <br></br> laudantium repellat commodi, ea earum illo rerum ipsam repellendus?<br></br> amet consectetur adipisicing elit</p>
 
-                        <Button className='banner-btn btn btn-danger ' style={{width: "200px", height: "50px"}}>
+                        <Button className='banner-btn btn btn-danger mt-3 ' style={{width: "200px", height: "50px"}}>
                             <Link to='/' className='text-decoration-none text-white fw-bold '>Subscribe <FaArrowRight></FaArrowRight> </Link>
                         </Button>
                     </div>

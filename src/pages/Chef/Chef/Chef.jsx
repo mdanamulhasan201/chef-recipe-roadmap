@@ -70,9 +70,9 @@ const Chef = () => {
                     <div className="row mb-5">
                         {chefData.recipes && chefData.recipes.map(recipe => (
 
-                            <div className='col-12 col-md-6 col-lg-4 g-4' key={recipe.id}>
+                            <div className='col-12 col-md-6 col-lg-4 g-4' key={recipe.recipe_name}>
 
-                                <Card style={{ height: "650px" }} className='styles'>
+                                <Card style={{ height: "750px" }} className='styles'>
                                     <Card.Img variant="top" style={{ height: "200px" }} src={recipe?.recipe_img} />
                                     <Card.Body>
                                         <Card.Title className='fw-bold fs-3 text-danger'>{recipe?.recipe_name}</Card.Title>
@@ -86,11 +86,6 @@ const Chef = () => {
                                             <p> <span className='fw-bold'>Ingredients:</span> {recipe?.Ingredients}
                                             </p>
 
-                                            {/* <ol>
-                                                <li>
-                                                {recipe?.Ingredients}
-                                                </li>
-                                            </ol> */}
                                             
                                             </ListGroup.Item>
                                         <ListGroup.Item>
@@ -113,7 +108,7 @@ const Chef = () => {
                                                 <div><p className='fs-5  ms-2'>{recipe?.rating}</p></div>
                                             </div>
 
-                                            <div>
+                                            <div className='ms-4'>
                                                 <Link ><Button onClick={notify} className='btn btn-danger' variant="primary">Favorite <FaRegHeart></FaRegHeart></Button>  </Link>
                                                 <Toaster position="top-right"
                                                     reverseOrder={false} />

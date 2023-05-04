@@ -121,9 +121,9 @@ const Register = () => {
     return (
         <div>
             <Container>
-                <div className='form my-4 mx-5 mt-5'>
+                <div className='form my-4 mx-5 mt-5 mb-5 pb-5'>
                     <div className='container'>
-                        <div className='row bg-light no-gutters'>
+                        <div className='row bg bg-light no-gutters'>
                             <div className='col-lg-5'>
                                 <img src="https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className='img-fluid ' alt="" />
                             </div>

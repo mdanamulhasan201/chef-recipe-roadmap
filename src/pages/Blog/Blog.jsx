@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
         <div className='container mb-5 pb-5'>
-            <h2 className='text-center'>Question</h2>
+            <h2 className='text-center mt-3 fw-bold'>Ques<span className='text-danger'>tions</span></h2>
             <div className='bg-light p-3  mt-5 pt-5'>
                 <h3 className='text-center'>1. Tell us the differences between uncontrolled and controlled components</h3>
                 <p className='p-3 fs-5'><span className='fw-bold fs-4'>Controlled components:</span> React is responsible for setting and managing the value of controlled components. They also have a tool that makes changes according to what the user does. A controlled component's value can be changed by its parent component because it is always given as a prop. <br />

@@ -20,8 +20,9 @@
 }
 
 .text-area{
-    font-size: 80px;
-    font-family: roboto;
+    margin-top: 50px;
+    font-size: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -77,7 +78,8 @@
  }  
  
  .text-area{
-    font-size: 50px;
+    margin-top: 150px;
+    font-size: 80px;
  }
 }
 
